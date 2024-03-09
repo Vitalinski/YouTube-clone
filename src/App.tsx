@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
-import Navbar from "./components/Navbar";
-import Feed from "./components/Feed";
-import VideoDetail from "./components/VideoDetail";
-import ChannelDetail from "./components/ChannelDetail";
-import SearchFeed from "./components/SearchFeed.tsx";
+import Feed from "@/components/Feed";
+import VideoDetail from "@/components/VideoDetail";
+import ChannelDetail from "@/components/ChannelDetail";
+import SearchFeed from "@/components/SearchFeed.tsx";
+import Navbar from "@/components/Navbar/index.tsx";
 const App: FC = () => {
   return (
     <BrowserRouter>
