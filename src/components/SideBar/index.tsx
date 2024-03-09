@@ -1,15 +1,18 @@
 import { FC } from 'react';
 import { Stack } from '@mui/material';
 import { categories } from '@/utils/Constants';
-
-const SideBar: FC = () => {
-    const selectedCategory = 'New'
+interface SideBarProps {
+    selectedCategory: string;
+    setSelectedCategory: (category:string) => void;
+  }
+const SideBar: FC<SideBarProps> = ({selectedCategory , setSelectedCategory}) => {
     const allCategories =()=>{
       return  categories.map((category)=>{
         const Icon = category.icon
         return (
             <button key={category.name}
             className='category-btn'
+            onClick={()=>setSelectedCategory(category.name)}
             style={{
                 background:category.name === selectedCategory?"#FC1503":'',
                 color:'white'

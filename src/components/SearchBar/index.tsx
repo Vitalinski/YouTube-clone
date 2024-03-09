@@ -1,5 +1,4 @@
-import { FC, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { FC } from 'react';
 import { Paper, IconButton } from '@mui/material';
 import {Search} from '@mui/icons-material'
 const SearchBar: FC = () => {
