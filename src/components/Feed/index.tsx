@@ -20,7 +20,7 @@ setSelectedCategory={setSelectedCategory}
 
 />
 <Typography className='copyright'  variant='body2' sx={{mt:1.5, color:'#fff '}}>
-  Some 
+  Categories 
 </Typography>
 </Box>
 <Box p={2} sx={{overflow:'auto', height:'90vh', flex:2}}>
