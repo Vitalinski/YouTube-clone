@@ -28,10 +28,11 @@ interface ChannelDetailProps {
       channelId?: string;
       channelTitle?: string;
     };
-  };
+  },
+  marginTop: string
 }
 
-const ChannelCard: FC<ChannelDetailProps> = ({ channelDetail }) => {
+const ChannelCard: FC<ChannelDetailProps> = ({ channelDetail, marginTop }) => {
   return (
     <Box sx={{display:'flex', justifyContent:'center', alignItems:'center',  boxShadow: "none", borderRadius: "20px", width:{xs:'356px', md:'320px'}, height:'326px', margin:'auto' }}>
       <Link to={`/channel/${channelDetail?.id?.channelId}`}>
@@ -47,8 +48,7 @@ const ChannelCard: FC<ChannelDetailProps> = ({ channelDetail }) => {
           <CardMedia
             component="img"
             image={
-              channelDetail?.snippet?.thumbnails?.high?.url ||
-              demoProfilePicture
+              channelDetail?.snippet?.thumbnails?.high?.url||demoProfilePicture
             }
             alt={channelDetail?.snippet?.title}
             sx={{
@@ -56,6 +56,7 @@ const ChannelCard: FC<ChannelDetailProps> = ({ channelDetail }) => {
               width: "180px",
               height: "180px",
               border: "2px solid #e3e3e3",
+              marginTop
             }}
           />
           <Typography variant="h6">
