@@ -12,11 +12,13 @@ interface simpleInt {
 }
 interface VideosProps{
     videos:simpleInt[];
+    direction:string;
 }
 
-const Videos: FC<VideosProps> = ({videos}) => {
+const Videos: FC<VideosProps> = ({videos, direction}) => {
+  if(!videos?.length) return 'Loading...'
   return (
-  <Stack direction='row' flexWrap='wrap' 
+  <Stack direction={direction ||'row'} flexWrap='wrap' 
   justifyContent='start' gap={2} >
 {videos.map((item, idx)=>{
   return  <Box key={idx}>

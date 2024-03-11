@@ -4,15 +4,17 @@ import ReactPlayer from "react-player";
 import { Box, Stack, Typography } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
 import { fetchFromAPI } from "@/utils/FetchFromAPI";
+import Videos from "@/components/Videos";
 
 const VideoDetail: FC = () => {
   const { id } = useParams<{ id: string }>();
   const [videoDetail, setVideoDetail] = useState<any>(null);
+  const [videos, setVideos] = useState<any>(null);
 
   useEffect(() => {
     fetchFromAPI(`videos?part=snippet,statistics&id=${id}`).then((data) =>
-      setVideoDetail(data.items[0])
-    );
+      setVideoDetail(data.items[0]));
+      fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`).then((data)=>setVideos(data.items))
   }, [id]);
 
   if (!videoDetail?.snippet) return "Loading...";
@@ -64,6 +66,10 @@ const VideoDetail: FC = () => {
             </Stack>
           </Box>
         </Box>
+      <Box px={2} py={{md:1, xs:5}} justifyContent='center' alignItems='center'>
+        <Videos videos={videos} direction='column'/>
+
+      </Box>
       </Stack>
     </Box>
   );
