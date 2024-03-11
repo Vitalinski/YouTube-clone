@@ -1,20 +1,14 @@
-import { FC } from "react";
-import {
-  Box,
-  CardComponent,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
-import { CheckCircle } from "@mui/icons-material";
-import { Link } from "react-router-dom";
-import { demoProfilePicture } from "@/utils/Constants";
+import { demoProfilePicture } from '@/utils/Constants';
+import { CheckCircle } from '@mui/icons-material';
+import { Box, CardContent, CardMedia, Typography } from '@mui/material';
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 interface ChannelDetailProps {
   channelDetail: {
-    statistics?:{
-      subscriberCount:string
-    }
+    statistics?: {
+      subscriberCount: string;
+    };
     id: {
       channelId: string;
     };
@@ -28,40 +22,49 @@ interface ChannelDetailProps {
       channelId?: string;
       channelTitle?: string;
     };
-  },
-  marginTop: string
+  };
+  marginTop?: string;
 }
 
 const ChannelCard: FC<ChannelDetailProps> = ({ channelDetail, marginTop }) => {
   return (
-    <Box sx={{display:'flex', justifyContent:'center', alignItems:'center',  boxShadow: "none", borderRadius: "20px", width:{xs:'356px', md:'320px'}, height:'326px', margin:'auto' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        boxShadow: 'none',
+        borderRadius: '20px',
+        width: { xs: '356px', md: '320px' },
+        height: '326px',
+        margin: 'auto',
+      }}
+    >
       <Link to={`/channel/${channelDetail?.id?.channelId}`}>
         <CardContent
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            textAlign: "center",
-            color: "#fff",
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            textAlign: 'center',
+            color: '#fff',
           }}
         >
           <CardMedia
-            component="img"
-            image={
-              channelDetail?.snippet?.thumbnails?.high?.url||demoProfilePicture
-            }
+            component='img'
+            image={channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture}
             alt={channelDetail?.snippet?.title}
             sx={{
-              borderRadius: "50%",
-              width: "180px",
-              height: "180px",
-              border: "2px solid #e3e3e3",
-              marginTop
+              borderRadius: '50%',
+              width: '180px',
+              height: '180px',
+              border: '2px solid #e3e3e3',
+              marginTop,
             }}
           />
-          <Typography variant="h6">
+          <Typography variant='h6'>
             {channelDetail?.snippet?.title}
-            <CheckCircle sx={{ fontSize: 14, color: "gray", ml: "5px" }} />
+            <CheckCircle sx={{ fontSize: 14, color: 'gray', ml: '5px' }} />
           </Typography>
           {channelDetail?.statistics?.subscriberCount && (
             <Typography>
