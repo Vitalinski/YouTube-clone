@@ -1,6 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-
-const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
+import { BASE_URL } from '../Constants';
 const options: AxiosRequestConfig = {
   params: {
     maxResults: '50',

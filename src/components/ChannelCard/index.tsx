@@ -1,4 +1,4 @@
-import { demoProfilePicture } from '@/utils/Constants';
+import { DEMO} from '@/utils/Constants';
 import { CheckCircle } from '@mui/icons-material';
 import { Box, CardContent, CardMedia, Typography } from '@mui/material';
 import { FC } from 'react';
@@ -52,7 +52,7 @@ const ChannelCard: FC<ChannelDetailProps> = ({ channelDetail, marginTop }) => {
         >
           <CardMedia
             component='img'
-            image={channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture}
+            image={channelDetail?.snippet?.thumbnails?.high?.url || DEMO.PROFILE_PICTURE}
             alt={channelDetail?.snippet?.title}
             sx={{
               borderRadius: '50%',

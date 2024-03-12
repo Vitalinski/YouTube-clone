@@ -22,7 +22,7 @@ interface Category {
 
 export const categories: Category[] = [
   { name: 'New', icon: HomeIcon },
-  { name: 'JS Mastery', icon: CodeIcon },
+  { name: 'MrBeast', icon: SportsEsportsIcon },
   { name: 'Coding', icon: CodeIcon },
   { name: 'ReactJS', icon: CodeIcon },
   { name: 'NextJS', icon: CodeIcon },
@@ -40,11 +40,19 @@ export const categories: Category[] = [
   { name: 'Crypto', icon: DeveloperModeIcon },
 ];
 
-export const demoThumbnailUrl: string = 'https://i.ibb.co/G2L2Gwp/API-Course.png';
-export const demoChannelUrl: string = '/channel/UCmXmlB4-HJytD7wek0Uo97A';
-export const demoVideoUrl: string = '/video/GDa8kZLNhJ4';
-export const demoChannelTitle: string = 'JavaScript Mastery';
-export const demoVideoTitle: string =
-  'Build and Deploy 5 JavaScript & React API Projects in 10 Hours - Full Course | RapidAPI';
-export const demoProfilePicture: string =
-  'http://dergipark.org.tr/assets/app/images/buddy_sample.png';
+export const DEMO = {
+  CHANNEL_URL: '/channel/UCmXmlB4-HJytD7wek0Uo97A',
+  VIDEO_URL: '/video/GDa8kZLNhJ4',
+  CHANNEL_TITLE: 'Example channel title',
+  VIDEO_TITLE: 'Example video title',
+  PROFILE_PICTURE: 'http://dergipark.org.tr/assets/app/images/buddy_sample.png',
+};
+
+export const ROUTES ={
+START:'/',
+VIDEO:'/video/:id',
+CHANNEL:'/channel/:id',
+SEARCH_FEED:'/search/:searchTerm' ,
+};
+
+export const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
