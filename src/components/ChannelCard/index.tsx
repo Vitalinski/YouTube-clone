@@ -3,28 +3,7 @@ import { CheckCircle } from '@mui/icons-material';
 import { Box, CardContent, CardMedia, Typography } from '@mui/material';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import '@/config/colors.scss'
-interface ChannelDetailProps {
-  channelDetail: {
-    statistics?: {
-      subscriberCount: string;
-    };
-    id: {
-      channelId: string;
-    };
-    snippet: {
-      title: string;
-      thumbnails?: {
-        high?: {
-          url: string;
-        };
-      };
-      channelId?: string;
-      channelTitle?: string;
-    };
-  };
-  marginTop?: string;
-}
+import { ChannelDetailProps } from '@/utils/Types';
 
 const ChannelCard: FC<ChannelDetailProps> = ({ channelDetail, marginTop }) => {
   return (
@@ -52,7 +31,7 @@ const ChannelCard: FC<ChannelDetailProps> = ({ channelDetail, marginTop }) => {
         >
           <CardMedia
             component='img'
-            image={channelDetail?.snippet?.thumbnails?.high?.url || DEMO.PROFILE_PICTURE}
+            image={channelDetail?.snippet?.thumbnails?.high?.url|| DEMO.PROFILE_PICTURE}
             alt={channelDetail?.snippet?.title}
             sx={{
               borderRadius: '50%',

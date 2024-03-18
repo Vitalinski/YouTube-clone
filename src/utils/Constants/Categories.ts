@@ -11,12 +11,8 @@ import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import SchoolIcon from '@mui/icons-material/School';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
-import { SvgIcon } from '@mui/material';
+import { Category } from '@/utils/Types';
 
-interface Category {
-    name: string;
-    icon: typeof SvgIcon;
-  }
   
   const CATEGORIES: Category[] = [
     { name: 'New', icon: HomeIcon },
