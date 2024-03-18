@@ -1,4 +1,4 @@
-import { categories } from '@/utils/Constants';
+import { CATEGORIES } from '@/utils/Constants';
 import { Stack } from '@mui/material';
 import { FC } from 'react';
 
@@ -8,7 +8,7 @@ interface SideBarProps {
 }
 const SideBar: FC<SideBarProps> = ({ selectedCategory, setSelectedCategory }) => {
   const allCategories = () => {
-    return categories.map((category) => {
+    return CATEGORIES.map((category) => {
       const Icon = category.icon;
       return (
         <button

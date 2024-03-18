@@ -1,5 +1,5 @@
 import SearchBar from '@/components/SearchBar';
-import { logo } from '@/utils/Constants';
+import { LOGO } from '@/utils/Constants';
 import { Stack } from '@mui/material';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ const Navbar: FC = () => {
       }}
     >
       <Link to='/' style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={logo} alt='logo' height={45} />
+        <img src={LOGO} alt='logo' height={45} />
       </Link>
       <SearchBar />
     </Stack>

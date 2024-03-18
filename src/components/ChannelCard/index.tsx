@@ -3,7 +3,7 @@ import { CheckCircle } from '@mui/icons-material';
 import { Box, CardContent, CardMedia, Typography } from '@mui/material';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-
+import '@/config/colors.scss'
 interface ChannelDetailProps {
   channelDetail: {
     statistics?: {
